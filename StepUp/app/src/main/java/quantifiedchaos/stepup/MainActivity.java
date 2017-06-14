@@ -41,12 +41,6 @@ public class MainActivity extends Activity{
     static TextView IntervalTime;
     static CountDownTimer mTimer;
     static int mIntervalTime = 30000;
-//    static String mStartTime = "0:00 PM";
-//    static TextView StartTime;
-//    static String mEndTime = "0:00 PM";
-//    static TextView EndTime;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,20 +53,15 @@ public class MainActivity extends Activity{
         MovementText = findViewById(R.id.MovementBool);
         userTime = findViewById(R.id.TimeInterval);
         IntervalTime = findViewById(R.id.SetInterval);
-//        EndTime = findViewById(R.id.startTime);
-//        StartTime = findViewById(R.id.endTime);
+
 
         mSettingsButton = findViewById(R.id.settingsButton);
         mSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-//                Intent intent = new Intent(MainActivity.this, SetActivity.class );
-//                startActivity(intent);
+
                 if(!userTime.getText().toString().isEmpty()){
-//                    mStartTime = StartTime.getText().toString();
-//                    mEndTime = EndTime.getText().toString();
-//                    StartTime.setText(mStartTime);
-//                    EndTime.setText(mEndTime);
+
 
                     mIntervalTime = 60*(1000 * Integer.parseInt(userTime.getText().toString()));
                     IntervalTime.setText("Minutes Interval: " + (mIntervalTime / 1000)/60);
@@ -89,11 +78,6 @@ public class MainActivity extends Activity{
 
         TimeText = findViewById(R.id.TimeText);
         startTimer(mIntervalTime);
-//        mTimer.cancel();
-//        mTimer.start();
-//        IntervalTime.setText("Minutes Interval: " + (mIntervalTime / 1000)/60);
-//        StartTime.setText("0:00 PM");
-//        EndTime.setText("0:00 PM");
 
 
 
@@ -108,7 +92,6 @@ public class MainActivity extends Activity{
 
             public void onFinish() {
                 TimeText.setText("done!");
-
                 triggerAlarm();
             }
         };
